@@ -2,6 +2,7 @@ from flask import Flask, jsonify, request, send_file
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from datetime import date
+from flask_ipban import IpBan
 import os
 app = Flask(__name__)
 CORS(app)
@@ -10,3 +11,5 @@ arquivobd = os.path.join(caminho, "pessoas.db")
 app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{arquivobd}'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
 db = SQLAlchemy(app)
+ip_ban = IpBan(ban_seconds=200000)
+ip_ban.init_app(app)
