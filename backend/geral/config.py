@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from datetime import date
 from flask_ipban import IpBan
+from flask_gzipbomb import GzipBombResponse
 import os
 app = Flask(__name__)
 CORS(app)
