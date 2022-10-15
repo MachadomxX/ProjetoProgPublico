@@ -3,6 +3,8 @@ import importModelos
 from rotas.listar import *
 from rotas.cadastrar import *
 from rotas.deletar import *
+from rotas.atualizar import *
+
 @app.route('/')
 def padrao():
     return 'classe'
