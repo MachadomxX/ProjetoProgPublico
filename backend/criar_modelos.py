@@ -7,5 +7,3 @@ if os.path.exists(arquivobd):
 
 # criar tabelas
 db.create_all()
-
-print("Banco de dados e tabelas criadas")

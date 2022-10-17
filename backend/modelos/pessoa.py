@@ -10,7 +10,7 @@ class Pessoa(db.Model):
     identidade = db.Column(db.Text)
     cargo = db.Column(db.String(50))
     data = db.Column(db.Date)
-
+    
     escolaId = db.Column(db.Integer, db.ForeignKey(Escola.id))
     escola = db.relationship("Escola")
 

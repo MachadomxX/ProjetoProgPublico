@@ -3,7 +3,6 @@ from rotas.model import *
 @app.route('/listar/<string:valor>')
 def listar_tudo(valor:str):
     if valor == 'Pessoa':
-        print(valor)
         pessoas = db.session.query(Pessoa).all()
     elif valor == 'Escola':
         pessoas = db.session.query(Escola).all()
@@ -22,3 +21,6 @@ def listar_tudo(valor:str):
     resposta.headers.add("Access-Control-Allow-Origin", 
     "*")    
     return resposta
+
+
+#curl http://191.52.7.74:5000/listar/Pessoa

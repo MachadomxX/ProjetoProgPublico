@@ -8,7 +8,7 @@ from flask_antijs import AntiJs
 import os
 app = Flask(__name__)
 CORS(app)
-AntiJs(app)
+#AntiJs(app)
 caminho = os.path.dirname(os.path.abspath(__file__)) 
 arquivobd = os.path.join(caminho, "pessoas.db")
 app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{arquivobd}'

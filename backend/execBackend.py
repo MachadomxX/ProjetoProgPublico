@@ -7,5 +7,5 @@ from rotas.atualizar import *
 
 @app.route('/')
 def padrao():
-    return 'classe'
+    return 'https://github.com/MachadomxX/projetoProgPublico'
 app.run(debug=True, host= '0.0.0.0')
