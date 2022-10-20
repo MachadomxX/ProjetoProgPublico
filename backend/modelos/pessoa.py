@@ -5,7 +5,7 @@ class Pessoa(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nome = db.Column(db.String(254))
     idade = db.Column(db.Integer)
-    email = db.Column(db.String(254))
+    email = db.Column(db.String(254), unique=True, nullable=False)
     telefone = db.Column(db.String(20))
     identidade = db.Column(db.Text)
     cargo = db.Column(db.String(50))
