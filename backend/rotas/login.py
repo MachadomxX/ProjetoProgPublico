@@ -1,15 +1,17 @@
 from logging import exception
 from geral.config import *
 from rotas.model import *
+from geral.cripto import *
 
 
 @app.route('/logar', methods=['post'])
 def logar():
     def chamar(classe):
 
-        if db.session.query(classe).filter_by(id=pessoa.id).first() is not None:
-                if db.session.query(classe).filter_by(senha=dados['senha']).first()  is not None:
-                    return True
+        if (x:= db.session.query(classe).filter_by(id=pessoa.id).first()) is not None:
+            if validar_senha(x.senha, dados["senha"]):
+                print(validar_senha(x.senha, dados["senha"]), x.senha, dados["senha"], "\n", cifrar(dados["senha"]))
+                return True
         else:
             return False
 

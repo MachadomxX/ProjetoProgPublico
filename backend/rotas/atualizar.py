@@ -10,11 +10,13 @@ def atualizar(classe:str):
             return resposta
     else:
         if classe == "Escola":id = dados['id'];escola = Escola.query.get(id);resposta = jsonify({"resultado": "erro", "detalhes": "Objeto não encontrado"}) if escola is None else jsonify({"resultado": "ok", "detalhes": "ok"});escola.escola = dados['escola'];escola.cep = dados['cep'];escola.numero = dados['numero'];escola.telefone = dados['telefone'];db.session.commit()
+
         elif classe == "Pessoa":id = dados['id'];pessoa = Pessoa.query.get(id);resposta = jsonify({"resultado": "erro", "detalhes": "Objeto não encontrado"}) if pessoa is None else jsonify({"resultado": "ok", "detalhes": "ok"});pessoa.nome = dados['nome'];pessoa.idade = dados['idade'];pessoa.email = dados['email'];pessoa.telefone = dados['telefone'];pessoa.data = dados['data'];pessoa.escolaId = dados['escolaId'];db.session.commit()
+
         elif classe == "Fucionario":id = dados['id'];funcionario = Funcionario.query.get(id);resposta = jsonify({"resultado": "erro", "detalhes": "Objeto não encontrado"}) if funcionario is None else jsonify({"resultado": "ok", "detalhes": "ok"});funcionario.salario = dados['salario'];funcionario.cargaH = dados['cargaH'];escola.cargos = dados['cargos'];db.session.commit()
-        elif classe == "Estudante":id = dados['id'];estudante = Estudante.query.get(id);resposta = jsonify({"resultado": "erro", "detalhes": "Objeto não encontrado"}) if estudante is None else jsonify({"resultado": "ok", "detalhes": "ok"});estudante.matricula = dados['matricula'];estudante.senha = dados['senha'];db.session.commit()
-        elif classe == "Autenticado":id = dados['id'];autenticado = Autenticado.query.get(id);resposta = jsonify({"resultado": "erro", "detalhes": "Objeto não encontrado"}) if autenticado is None else jsonify({"resultado": "ok", "detalhes": "ok"});autenticado.senha = dados['senha'];db.session.commit()
-        elif classe == "Administrador":id = dados['id'];administrador = Administrador.query.get(id);resposta = jsonify({"resultado": "erro", "detalhes": "Objeto não encontrado"}) if administrador is None else jsonify({"resultado": "ok", "detalhes": "ok"});admiministrador.senha = dados['senha']; db.session.commit()
+        elif classe == "Estudante":id = dados['id'];estudante = Estudante.query.get(id);resposta = jsonify({"resultado": "erro", "detalhes": "Objeto não encontrado"}) if estudante is None else jsonify({"resultado": "ok", "detalhes": "ok"});estudante.matricula = dados['matricula'];estudante.senha = cifrar(dados['senha']);db.session.commit()
+        elif classe == "Autenticado":id = dados['id'];autenticado = Autenticado.query.get(id);resposta = jsonify({"resultado": "erro", "detalhes": "Objeto não encontrado"}) if autenticado is None else jsonify({"resultado": "ok", "detalhes": "ok"});autenticado.senha = cifrar(dados['senha']);db.session.commit()
+        elif classe == "Administrador":id = dados['id'];administrador = Administrador.query.get(id);resposta = jsonify({"resultado": "erro", "detalhes": "Objeto não encontrado"}) if administrador is None else jsonify({"resultado": "ok", "detalhes": "ok"});admiministrador.senha = cifrar(dados['senha']); db.session.commit()
        
         else: resposta =  jsonify({"resultado": "erro", "detalhes": "classe não encontrado"})
     return resposta
