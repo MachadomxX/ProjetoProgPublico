@@ -8,11 +8,11 @@ class Escola(db.Model):
     cep = db.Column(db.String(254))
     numero = db.Column(db.Integer)
     telefone = db.Column(db.Integer)
-    """def json():
+    def json(self):
         return {
             "id": self.id,
             "escola": self.escola,
             "cep": self.cep,
             "numero": self.numero,
-            "telefone": self.telefone,
-        }"""
+            "telefone": self.telefone
+        }

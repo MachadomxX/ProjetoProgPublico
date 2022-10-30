@@ -6,7 +6,7 @@ class Administrador(Pessoa):
     senha = db.Column(db.String(254))
 
     __mapper_args__ = {
-        'polymorphic_identity': 'administrador',
+        'polymorphic_identity': 'Administrador',
     }
 
     def __str__(self):

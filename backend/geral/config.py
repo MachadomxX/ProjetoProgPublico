@@ -14,5 +14,5 @@ arquivobd = os.path.join(caminho, "pessoas.db")
 app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{arquivobd}'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
 db = SQLAlchemy(app)
-ip_ban = IpBan(ban_seconds=200000)
+ip_ban = IpBan(ban_seconds=2)
 ip_ban.init_app(app)

@@ -6,7 +6,7 @@ class Estudante(Pessoa):
     senha = db.Column(db.String(254))
 
     __mapper_args__ = {
-        'polymorphic_identity': 'estudante',
+        'polymorphic_identity': 'Estudante',
     }
 
     def __str__(self):

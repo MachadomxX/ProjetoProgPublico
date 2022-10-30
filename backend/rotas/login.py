@@ -34,4 +34,5 @@ def logar():
     resposta.headers.add("Access-Control-Allow-Origin", "*")
     return resposta
 
-        #curl -d '{"email":"josilva@gmaial.com", "senha":"1a23"}' -X POST -H "Content-Type:application/json" http://191.52.7.74:5000/logar
+        # curl -d '{"email":"josilva@gmaial.com", "senha":"1a23"}' -X POST -H "Content-Type:application/json" http://191.52.7.74:5000/logar
+        # curl -d '{"email":"abc@abc", "senha":"senha"}' -X POST -H "Content-Type:application/json" http://localhost:5000/logar

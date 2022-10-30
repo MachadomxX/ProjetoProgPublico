@@ -15,7 +15,7 @@ class Pessoa(db.Model):
     escola = db.relationship("Escola")
 
     __mapper_args__ = {
-        'polymorphic_identity': 'pessoa',
+        'polymorphic_identity': 'Pessoa',
         'polymorphic_on': cargo
     }
 

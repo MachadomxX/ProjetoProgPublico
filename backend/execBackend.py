@@ -8,5 +8,5 @@ from rotas.login import *
 
 @app.route('/')
 def padrao():
-    return 'https://github.com/MachadomxX/projetoProgPublico'
-app.run(debug=True, host= '0.0.0.0')
+    return "<a href='https://github.com/MachadomxX/projetoProgPublico'>https://github.com/MachadomxX/projetoProgPublico</a>"
+app.run(debug=False, host= '0.0.0.0')

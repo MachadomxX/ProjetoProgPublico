@@ -1,6 +1,7 @@
 from logging import exception
 from geral.config import *
 from rotas.model import *
+#curl -X POST http://192.168.0.4:5000/deletar/Pessoa/0
 @app.route('/deletar/<string:valor>/<int:ida>', methods=['post'])
 def deletar(valor:str, ida:int):
     resposta = jsonify({"resultado": "ok", "detalhes": "apagado"})
