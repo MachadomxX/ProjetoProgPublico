@@ -25,4 +25,4 @@ def atualizar(classe:str):
         else: resposta =  jsonify({"resultado": "erro", "detalhes": "classe não encontrado"})
     return resposta
 
-#curl -X PUT -d '{"id":1, "escola":"IFC", "telefone":11111, "numero":12345, "cep":"123"}' -H "Content-Type:application/json"  http://192.168.0.2:5000/atualizar/Escola
+# curl -X PUT -d '{"id":1, "escola":"IFC", "telefone":11111, "numero":12345, "cep":"123"}' -H "Content-Type:application/json"  http://192.168.0.2:5000/atualizar/Escola

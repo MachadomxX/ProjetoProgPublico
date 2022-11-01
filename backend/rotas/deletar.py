@@ -28,4 +28,4 @@ def deletar(valor:str, ida:int):
     resposta.headers.add("Access-Control-Allow-Origin", "*")
     return resposta
 
-#curl -X POST http://192.168.0.4:5000/deletar/Pessoa/0
+# curl -X POST http://192.168.0.4:5000/deletar/Pessoa/0

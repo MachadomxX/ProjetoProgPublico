@@ -23,4 +23,4 @@ def listar_tudo(valor:str):
     return resposta
 
 
-#curl http://localhost:5000/listar/Pessoa
+# curl http://localhost:5000/listar/Pessoa
