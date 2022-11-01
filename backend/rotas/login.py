@@ -28,9 +28,9 @@ def logar():
                 elif chamar(Estudante) is True:
                     resposta = jsonify({"resultado": "ok", "detalhes": "Estudante"})
                 else: 
-                    resposta = jsonify({"resultado": "Error", "detalhes": 'Errado parça'})
+                    resposta = jsonify({"resultado": "Error", "detalhes": 'usuario ou senha errado'})
             else: 
-                resposta = jsonify({"resultado": "Error", "detalhes": 'N'})
+                resposta = jsonify({"resultado": "Error", "detalhes": 'usuario ou senha errado'})
         except Exception as error:
             resposta = jsonify({"resultado": "Error", "detalhes": error})
         resposta.headers.add("Access-Control-Allow-Origin", "*")
