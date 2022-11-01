@@ -3,7 +3,7 @@ from modelos.pessoa import Pessoa
 class Estudante(Pessoa):
     id = db.Column(db.Integer, db.ForeignKey('pessoa.id'), primary_key=True)
     matricula = db.Column(db.String(254))
-    senha = db.Column(db.String(254))
+    senha = db.Column(db.Text)
 
     __mapper_args__ = {
         'polymorphic_identity': 'Estudante',

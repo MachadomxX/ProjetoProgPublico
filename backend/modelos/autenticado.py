@@ -3,7 +3,7 @@ from geral.config import *
 from modelos.funcionario import Funcionario
 
 class Autenticado(Funcionario):
-    senha = db.Column(db.String(254))
+    senha = db.Column(db.Text)
     __mapper_args__ = {
         'polymorphic_identity': 'Autenticado',
     }
