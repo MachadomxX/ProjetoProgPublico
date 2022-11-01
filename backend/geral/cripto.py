@@ -10,10 +10,6 @@ def cifrar(senha):
 
 def validar_senha(cifrado, senha_fornecida):
     fornecida = cifrar(senha_fornecida)
-    print(fornecida)
-    print(cifrado)
     if cifrado == fornecida:
          return True
     return False
-
-print(cifrar('senha'))
