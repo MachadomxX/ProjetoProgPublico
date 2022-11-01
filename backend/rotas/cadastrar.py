@@ -8,7 +8,8 @@ def cadastrar(valor:str):
     dados = request.get_json(force=True) 
     try:  
         dados["data"] = converter_data(dados["data"])  
-    except Exception as error:
+        print(dados)
+    except:
         return 'Data no formato YYYY-MM-DD vagaba' 
     if valor == 'Pessoa':
         dado = Pessoa(**dados)
@@ -36,4 +37,4 @@ def cadastrar(valor:str):
     resposta.headers.add("Access-Control-Allow-Origin", "*")
     return resposta
     #curl -d '{"escola":"IFC", "telefone":11111, "cep":"123", "numero":12345}' -X POST -H "Content-Type:application/json" localhost:5000/cadastrar/Escola
-    # curl http://localhost:5000/cadastrar/Estudante -X POST -H "Content-Type:application/json" -d '{"nome": "ihig", "idade": 12,"email": "aabc@abc", "telefone": "8576858760", "identidade": "iygf", "data": "2022-12-20", "escolaId": 1, "matricula": "iuktfduktdutfd", "senha": "senha"}'
+    # curl http://localhost:5000/cadastrar/Estudante -X POST -H "Content-Type:application/json" -d '{"nome": "ihig", "idade": 12,"email": "aabzc@abc", "telefone": "8576858760", "identidade": "iygf", "data": "20222-12-20", "escolaId": 1, "matricula": "iuktfduktdutfd", "senha": "senha"}'

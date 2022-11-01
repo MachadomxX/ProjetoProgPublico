@@ -1,11 +1,16 @@
 from geral.config import *
+from geral.converter_data import *
 from rotas.model import *
 from geral.cripto import *
 
 @app.route("/atualizar/<string:classe>",  methods=['put'])
 def atualizar(classe:str):
     resposta = jsonify({"resultado": "ok", "detalhes": "ok"})
-    dados = request.get_json(force=True) 
+    dados = request.get_json(force=True)
+    try:  
+        dados["data"] = converter_data(dados["data"])  
+    except:
+        return 'Data no formato YYYY-MM-DD vagaba' 
     if 'id' not in dados:
             resposta = jsonify({"resultado": "erro", "detalhes": "Atributo id não encontrado"})
             return resposta
