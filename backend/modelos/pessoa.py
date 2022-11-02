@@ -8,7 +8,7 @@ class Pessoa(db.Model):
     email = db.Column(db.String(254), unique=True, nullable=False)
     telefone = db.Column(db.String(20), nullable=False)
     identidade = db.Column(db.Text, nullable=False)
-    cargo = db.Column(db.String(50), nullable=False)
+    cargo = db.Column(db.String(50))
     data = db.Column(db.Date, nullable=False)
     
     escolaId = db.Column(db.Integer, db.ForeignKey(Escola.id))

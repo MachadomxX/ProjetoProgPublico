@@ -17,7 +17,7 @@ joao2 = Administrador(nome="João daaa Silva", idade=11, # omitindo o telefone
 joao3 = Administrador(nome="João daaa Silva", idade=11, # omitindo o telefone
             email="josilvaaaaa@gmaial.com",telefone="121334",identidade='aaaaa', senha='1a23',data= date(2014, 1, 25), escolaId=3)
 joao4 = Autenticado(nome="João daaa Silva", idade=11, # omitindo o telefone
-            email="josaiaalva@gmaial.com",telefone="121334",identidade='aaaaa', senha='1aa23',data= date(2014, 1, 25), escolaId=4, cargos="sim")
+            email="josaiaalva@gmaial.com",telefone="121334",identidade='aaaaa', senha='1aa23',data= date(2014, 1, 25), escolaId=4, cargos="sim", salario = 11, cargaH = 1)
 
 db.session.add(e4)
 db.session.add(e3)
@@ -28,7 +28,7 @@ db.session.add(joao2)
 db.session.add(joao3)
 db.session.add(joao4)
 joao45 = Funcionario(nome="João daaa Silva", idade=11, # omitindo o telefone
-            email="josaaiaalava@gmaial.com",telefone="121334",identidade='aaaaa',data= date(2014, 1, 25), escolaId=4, cargos="sim")
+            email="josaaiaalava@gmaial.com",telefone="121334",identidade='aaaaa',data= date(2014, 1, 25), escolaId=4, cargos="sim",salario = 11, cargaH = 1)
 db.session.add(joao45)
 db.session.commit()"""
 

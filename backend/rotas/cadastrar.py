@@ -36,7 +36,10 @@ def cadastrar(valor:str):
             try:
                 db.session.commit()
             except:
-                resposta = jsonify({"resultado": "Error", "detalhes": 'Email já existente' })
+                if db.session.query(Pessoa).filter_by(email=dados['email']).first() is not None: 
+                    resposta = jsonify({"resultado": "Error", "detalhes": 'Email já existente' })
+                else: 
+                    resposta = jsonify({"resultado": "Error", "detalhes": 'Todos os campos devem ser preenchidos' })
                 return resposta
         except Exception as error:
             resposta = jsonify({"resultado": "Error", "detalhes": error})
