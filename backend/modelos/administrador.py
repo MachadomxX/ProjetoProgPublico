@@ -3,7 +3,7 @@ from modelos.pessoa import Pessoa
 
 class Administrador(Pessoa):
     id = db.Column(db.Integer, db.ForeignKey('pessoa.id'), primary_key=True)
-    senha = db.Column(db.Text)
+    senha = db.Column(db.Text, nullable=False)
 
     __mapper_args__ = {
         'polymorphic_identity': 'Administrador',

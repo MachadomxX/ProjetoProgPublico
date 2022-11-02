@@ -3,9 +3,9 @@ from modelos.pessoa import Pessoa
 
 class Funcionario(Pessoa):
     id = db.Column(db.Integer, db.ForeignKey('pessoa.id'), primary_key=True)
-    salario = db.Column(db.Integer)
-    cargaH = db.Column(db.Integer)
-    cargos = db.Column(db.String(254))
+    salario = db.Column(db.Integer, nullable=False)
+    cargaH = db.Column(db.Integer, nullable=False)
+    cargos = db.Column(db.String(254), nullable=False)
     __mapper_args__ = {
         'polymorphic_identity': 'Funcionario',
     }

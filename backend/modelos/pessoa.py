@@ -3,13 +3,13 @@ from modelos.escola import Escola
 
 class Pessoa(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    nome = db.Column(db.String(254))
-    idade = db.Column(db.Integer)
+    nome = db.Column(db.String(254), nullable=False)
+    idade = db.Column(db.Integer, nullable=False)
     email = db.Column(db.String(254), unique=True, nullable=False)
-    telefone = db.Column(db.String(20))
-    identidade = db.Column(db.Text)
-    cargo = db.Column(db.String(50))
-    data = db.Column(db.Date)
+    telefone = db.Column(db.String(20), nullable=False)
+    identidade = db.Column(db.Text, nullable=False)
+    cargo = db.Column(db.String(50), nullable=False)
+    data = db.Column(db.Date, nullable=False)
     
     escolaId = db.Column(db.Integer, db.ForeignKey(Escola.id))
     escola = db.relationship("Escola")
