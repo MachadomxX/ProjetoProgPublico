@@ -1,0 +1,99 @@
+* { padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box; }
+
+#msg{ resize: none; }
+
+body { background-color: Lavender; }
+
+ /* largura login até o topo */
+.login-page { width: 1000px;
+              padding: 0% 0 0;
+              margin: auto; }
+
+/* cor nav */
+nav { background: MidnightBlue;
+      height: 80px;
+      width: 100%; }
+
+/* formato e cor do formulário login */
+.form { position: relative;
+        z-index: 1;
+        background: LightSteelBlue;
+        max-width: 700px;
+        margin: 0 auto 100px;
+        padding: 50px;
+        text-align: center; 
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); }  /* sombreamento */
+
+/* espaçamento dos dados */
+.form input { outline: 0;
+              background: white;
+              width: 100%;
+              border: 0;
+              margin: 0 0 15px;
+              padding: 20px;
+              box-sizing: border-box;
+              font-size: 18px; }
+
+
+.form button { text-transform: uppercase;
+               outline: 0;
+               background-color: #E9B000; /* cor do botão enviar */
+               width: 100%;
+               border: 0;
+               padding: 15px;            /* largura do botão enviar */
+               color: #FFFFFF;
+              font-size: 18px;
+              -webkit-transition: all 0.3;
+              transition: all 0.3 ease;
+              cursor: pointer;  }
+
+
+.form .message { margin: 15px 0 0;
+                 color: black;        
+                 font-size: 15px; }
+
+.form .dados { text-align: left; 
+               font-size: 23px; }
+
+/* palavra SCHOOL */
+label.logo { color: white;
+             font-size: 45px;
+             line-height: 80px;
+             padding: 0 100px; }
+
+/* localizalização da nav: contato, login, serviços... */
+nav ul { float: right;
+        margin-right: 20px; }
+/* localizalização da nav: contato, login, serviços... */
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px; }
+/* localizalização da nav: contato, login, serviços... */
+nav ul li a {
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase; }
+
+a.active, a:hover {
+    background: #E9B000; /* cor amarela ao selecionar tal nav */
+    transition: .5s; }
+
+/* SCHOOL */
+.checkbtn { font-size: 30px;
+            color: white;
+            float: right;
+            line-height: 80px;
+            margin-right: 40px;
+            cursor: pointer;
+            display: none; }
+#check    { display: none; }
+@media (max-width: 858px){
+    .checkbtn {
+        display: block; }
