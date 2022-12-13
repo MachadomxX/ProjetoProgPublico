@@ -1,0 +1,224 @@
+h1 { text-align: center;
+    color: white;
+    font-size: 80px;
+    right: 15px;
+}
+
+* { padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box; }
+
+    .mySlides {display:none;}
+body {background-image: linear-gradient(to right, Lavender, MidnightBlue); }
+
+
+ /* largura login até o topo */
+.login-page { width: 1000px;
+              padding: 2% 0 0;
+              margin: auto; }
+
+/* cor nav */
+nav { background: MidnightBlue;
+      height: 80px;
+      width: 100%; }
+
+/* palavra SCHOOL */
+label.logo { color: white;
+             font-size: 45px;
+             line-height: 80px;
+             padding: 0 100px; }
+
+/* localizalização da nav: contato, login, serviços... */
+nav ul { float: right;
+        margin-right: 20px; }
+/* localizalização da nav: contato, login, serviços... */
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px; }
+/* localizalização da nav: contato, login, serviços... */
+nav ul li a {
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase; }
+
+a.active, a:hover {
+    background: #E9B000; /* cor amarela ao selecionar tal nav */
+    transition: .5s; }
+
+/* SCHOOL */
+.checkbtn { font-size: 30px;
+            color: white;
+            float: right;
+            line-height: 80px;
+            margin-right: 40px;
+            cursor: pointer;
+            display: none; }
+#check    { display: none; }
+@media (max-width: 858px){
+    .checkbtn {
+        display: block; }}
+
+
+div:target{
+    display:block;
+}
+
+.janelas{
+    display: none;
+}
+
+#servicos h1{font-size: 20px;
+    text-align: center;}
+    * { padding: 0;
+        margin: 0;
+        list-style: none;
+        box-sizing: border-box; }
+        
+#range_estudante, #minhadiv{
+    width: 100%;
+}
+
+#msg{ resize: none; 
+    font:message-box; 
+    margin: auto;    
+}
+.form { position: relative;
+        z-index: 1;
+        background: LightSteelBlue;
+        max-width: 700px;
+        max-height: 920px;
+        margin: 0 auto 100px;
+        padding: 50px;
+        text-align: center; 
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); }  /* sombreamento */
+
+.form input { outline: 0;
+              background: white;
+              width: 100%;
+              height: auto;
+              border: 0;
+              margin: 0 0 15px;
+              padding: 20px;
+              box-sizing: border-box;
+              font-size: 10px; }
+
+
+.form button { text-transform: uppercase;
+               outline: 0;
+               background-color: #E9B000; /* cor do botão enviar */
+               width: 100%;
+               border: 0;
+               padding: 15px;            /* largura do botão enviar */
+               color: #FFFFFF;
+              font-size: 18px;
+              -webkit-transition: all 0.3;
+              transition: all 0.3 ease;
+              cursor: pointer;  }
+
+
+.form .message { margin: 15px 0 0;
+                 color: black;        
+                 font-size: 15px; }
+
+.form .dados { text-align: left; 
+               font-size: 23px; }
+
+table{
+    border: 1px solid blue;
+    width: 50% !important;
+    margin: auto;
+}
+
+.content {
+    border-radius: 4px;
+    position: relative;
+    width: 500px;
+    max-width: 90%;
+    background: #fff;
+    padding: 1em 2em;
+  }
+   
+  .footer {
+    text-align: right;
+    margin-top: 50px;
+  }
+   
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #585858;
+    text-decoration: none;
+  }
+   
+  .footer-btn-close {
+    width: 150px;
+    padding: 10px;
+    text-decoration: none;
+    background-color: #cfcca8;
+    color: #000000;
+    border-radius: 3px;
+    text-align: end;
+  }
+  .modal {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(77, 77, 77, 0.7);
+    transition: all 0.4s;
+  }
+   
+  .modal:target {
+    visibility: visible;
+    opacity: 1;
+  }
+  .wrapper {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(52, 52, 52);
+    background: linear-gradient(
+      90deg,
+      rgba(52, 52, 52, 1) 0%,
+      rgba(97, 119, 255, 1) 0%,
+      rgba(33, 57, 189, 1) 100%
+    );
+  }
+   
+  .wrapper a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 3px;
+    text-transform: uppercase;
+    color: #585858;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .formupdate {
+    width: 100%;
+    padding: 8px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #555;
+    outline: none;
+    
+  }
+  
+  .formupdate:focus {
+    background-color: lightblue ;
+  }

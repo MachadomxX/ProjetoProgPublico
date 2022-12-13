@@ -1,7 +1,7 @@
 from logging import exception
 from geral.config import *
 from rotas.model import *
-@app.route('/deletar/<string:valor>/<int:ida>', methods=['post'])
+@app.route('/deletar/<string:valor>/<int:ida>', methods=['DELETE'])
 def deletar(valor:str, ida:int):
     try:
         resposta = jsonify({"resultado": "ok", "detalhes": "apagado"})
@@ -26,10 +26,8 @@ def deletar(valor:str, ida:int):
             db.session.commit()
         except Exception as error:
             resposta = jsonify({"resultado": "Error", "detalhes": error})
-        resposta.headers.add("Access-Control-Allow-Origin", "*")
-        return resposta
     except:
         resposta =  jsonify({"resultado": "erro", "detalhes": "algo deu errado"})
-        return resposta
-
-# curl -X POST http://192.168.0.4:5000/deletar/Pessoa/0
+    resposta.headers.add("Access-Control-Allow-Origin", "*")
+    return resposta
+# curl -X DELETE  http://192.168.0.4:5000/deletar/Pessoa/0

@@ -8,11 +8,14 @@ class Escola(db.Model):
     cep = db.Column(db.String(254), nullable=False)
     numero = db.Column(db.Integer, nullable=False)
     telefone = db.Column(db.Integer, nullable=False)
+    email = db.Column(db.String(254), unique=True, nullable=False)
+    senha = db.Column(db.Text, nullable=False)
     def json(self):
         return {
             "id": self.id,
             "escola": self.escola,
             "cep": self.cep,
             "numero": self.numero,
-            "telefone": self.telefone
+            "telefone": self.telefone,
+            "email": self.email
         }

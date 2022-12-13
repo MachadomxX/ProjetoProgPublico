@@ -4,12 +4,14 @@
 	<title>Início - School</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css"  href="index.css" />
+	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  	<script src="js/login.js"></script>
+	
+	<link rel="stylesheet" type="text/css"  href="css/index.css" />
+	<link rel="stylesheet" type="text/css"  href="css/sobre.css" />
+	<link rel="stylesheet" type="text/css"  href="css/login.css" />
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link rel="icon" href="favicon.png">
-  <style>
-				.mySlides {display:none;}
-	</style>
+	<link rel="icon" href="img/favicon.png">
 </head>
 
 <body>
@@ -21,15 +23,152 @@
 		</label>
 		<label class="logo">SCHOOL</label>
 		<ul>
-			<li><a class="active" href="#">Início</a></li>
-			<li><a href="sobre.html">Sobre</a></li>
-			<li><a href="serviços.html">Serviços</a></li>
-			<li><a href="contato.html">Contato</a></li>
-			<li><a href="login.html">Login</a></li>
+			<li><a  href="#index">Início</a></li>
+			<li><a href="#sobre">Sobre</a></li>
+			<li><a href="#servicos">Serviços</a></li>
+			<li><a href="#contato">Contato</a></li>
+			<li><a href="#login">Login</a></li>
 		</ul>
 	</nav>
 	
-<h1> Seja bem vindo! </h1>
 
+<div id="index" class="janelas" >
+	<a name="index"></a>
+	<h1> Seja bem vindo! </h1>
+</div>	
+<div id="sobre" class="janelas">
+	<a name="sobre"></a>
+	
+	<br>
+<br>
+<div id="sobre">
+  <div class="w3-content w3-display-container">
+      <img class="mySlides" src="img/layout1.png" style="width:100%" alt="slide1">
+      <img class="mySlides" src="img/layout2.png" style="width:100%" alt="slide2">
+      <img class="mySlides" src="img/layout3.png" style="width:100%" alt="slide3">
+      <img class="mySlides" src="img/layout4.png" style="width:100%" alt="slide4">
+
+      <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+      <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+  </div>
+</div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
+</div>
+<div id="servicos" class="janelas">
+	<br>
+	<h1>Relação de vagas para estudantes no próximo ano e relação aos professores e demais estudantes:</h1>
+	<br>
+  <!-- range para alterar um valor que está sendo exibido no gráfico -->
+  <label for="range_estudante" class="form-label">Quantas vagas estão disponíveis para estudantes?</label>
+  <br>
+  <input type="range" class="form-range" id="range_estudante" value="20"
+  onchange="atualiza_grafico()">
+
+  <hr>
+
+  <div id="minhadiv">
+  </div>
+
+  <!-- carga da biblioteca javascript de gráficos -->
+  <script src='https://cdn.plot.ly/plotly-2.14.0.min.js'></script>
+
+  <!-- carga do jquery -->
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+  <!-- meu script personalizado -->
+  <script>
+
+    function atualiza_grafico() {
+
+      // pegando o valor do range
+      var estudante = $("#range_estudante").val();
+
+      var data = [
+        {
+          x: ['estudantes', 'professores', 'servidores'],
+          y: [estudante, 15, 30],
+          type: 'bar'
+        }
+      ];
+      Plotly.newPlot('minhadiv', data);
+    }
+
+    // executa a função quando a página carregar
+    atualiza_grafico();
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+</div>
+<div id="contato" class="janelas">
+	<br>
+	<br>
+	<div class="login-page">
+	<div class="form">
+	<div class="login">
+	<div class="login-header">
+		<br>
+		<p class="dados">Informe sua mensagem:</p>
+		<br>
+	</div>
+	</div>
+
+	<form class="login-form" action="/email.php" method="post">
+		<form class="form" method="POST" action="./email.php">
+		<input class="field" name="name" placeholder="Nome">
+		<input class="field" name="email" placeholder="E-mail">
+		<textarea class="field" name="message" id="msg" cols="85" rows="5" name="msg" placeholder="Digite sua mensagem aqui"></textarea>
+		<br>
+		<br>
+		<button>Enviar</button>
+		</form>
+	</div>
+	</section>
+
+</div>
+</div>
+<div id="login" class="janelas">
+	<br>
+ <div class="login-page">
+ <div class="form">
+ <div class="login">
+ <div class="login-header">
+    <br>
+    <p class="dados">Digite seus dados:</p>
+    <br>
+ </div>
+ </div>
+
+
+  <form class="login-form">
+    <input type="text" placeholder="username" id="user" value="escola@gmail.com"/>
+    <input type="password" placeholder="password" id="password" value="a"/>
+    <button  onclick="return false;" id="Login" type="submit" >Logar</button>
+
+    <p class="message">Não é registrado? <a href="contato.html" target="_blank" rel="noopener noreferrer">Entre em contato conosco!</a>
+  </form>
+  </div>
+  </div>
+</div>
 </body>
 </html>

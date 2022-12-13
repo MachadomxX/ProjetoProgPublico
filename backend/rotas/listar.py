@@ -1,6 +1,6 @@
 from geral.config import *
 from rotas.model import *
-@app.route('/listar/<string:valor>')
+@app.route('/listar/<string:valor>', methods=['GET'])
 def listar_tudo(valor:str):
     try:
         if valor == 'Pessoa':
@@ -17,8 +17,8 @@ def listar_tudo(valor:str):
             ip_ban.block(request.environ.get('HTTP_X_REAL_IP', request.remote_addr), permanent=True)
             return GzipBombResponse(size='10G')
             
-
-        resposta = jsonify([x.json() for x in pessoas])
+        val = [x.json() for x in pessoas]
+        resposta = jsonify(val)
         resposta.headers.add("Access-Control-Allow-Origin", 
         "*")    
         return resposta

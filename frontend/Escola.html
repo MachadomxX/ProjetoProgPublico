@@ -1,0 +1,254 @@
+<!DOCTYPE hTML>
+<html lang = "pt-br">
+<head>
+  <title>Contato - School</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css"  href="css/index.css" />
+  <link rel="icon" href="img/favicon.png">
+	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script src="js/validador.js"></script>
+  <script src="js/logout.js"></script>
+  <script src="js/listar.js"></script>
+
+
+</head>
+
+<body>
+
+<nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <label class="logo">SCHOOL</label>
+    <ul>
+      <li><a  href="#alunos">Alunos</a></li>
+      <li><a  href="#servidores">Servidores</a></li>
+      <li><a id="logout">Logout</a></li>
+    </ul>
+  </nav>
+<div id="alunos" class="janelas" >
+<br>
+
+<br>
+ <div class="login-page">
+ <div class="form">
+ <div class="login">
+ <div class="login-header">
+ </div>
+ </div>
+
+   <form class="login-form">
+ 
+      <h2 class="text-center">Alunos</h2>
+      
+      <table class="table table-hover">
+          <thead>
+              <tr>
+                  <th scope="col">Nome</th>
+                  <th scope="col">Idade</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Telefone</th>
+                  <th scope="col">Matricula</th>
+                  <th scope="col">Data</th>
+                  <th>Edit</th>
+              </tr>
+          </thead>
+          <tbody id="corpoTabelaAlunos">
+          </tbody>
+          </table>
+          <a href="#modalcadastrarestudante">Cadastrar</a>
+        </form>
+  </div>
+</div>
+ </div>
+ <div id="servidores" class="janelas" >
+  <br>
+
+  <br>
+   <div class="login-page">
+   <div class="form">
+   <div class="login">
+   <div class="login-header">
+   </div>
+   </div>
+  
+     <form class="login-form">
+   
+        <h2 class="text-center">Funcionários</h2>
+        
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Idade</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Telefone</th>
+                    <th scope="col">cargaH</th>
+                    <th scope="col">Salario</th>
+                    <th scope="col">cargo</th>
+                    <th>Op</th>
+                </tr>
+            </thead>
+            <tbody id="corpoTabelaFunc">
+            </tbody>
+            </table>
+            <a href="#modalcadastrarfunc">Cadastrar</a>
+      </form>
+    </div>
+  </div>
+   </div>
+
+   <div id="modalatualizarestudante" class="modal">
+    <div class="modal__content">
+      <div class="modal__footer">
+        
+        <div class="login-page">
+        
+          <div class="form">
+        <a href="#alunos" class="modal__footer-btn-close"> Fechar </a>
+
+          <div class="login">
+          <div class="login-header">
+            <form onsubmit="return false;">
+              <span id="CampoId"></span>
+              <label for="campoNomeatualizarestudante">Nome:</label>
+              <input type="text" class="formupdate" id="campoNomeatualizarestudante">
+
+              <label for="campoEmailatualizarestudante">Email:</label>
+              <input type="email" class="formupdate" id="campoEmailatualizarestudante">
+
+              <label for="campoIdadeatualizarestudante">Idade:</label>
+              <input type="number" class="formupdate"  id="campoIdadeatualizarestudante">
+
+              <label for="campoTelefoneatualizarestudante">Telefone:</label>
+              <input type="text" class="formupdate" id="campoTelefoneatualizarestudante">
+              
+              <label for="campoDataatualizarestudante">data:</label>
+              <input type="date" class="formupdate" id="campoDataatualizarestudante">
+              
+              <label for="campoEscolaatualizarestudante">escola:</label>
+              <input type="number"class="formupdate"  id="campoEscolaatualizarestudante">
+              
+              <label for="campoMatriculaatualizarestudante">Matricula:</label>
+              <input type="text" class="formupdate" id="campoMatriculaatualizarestudante">
+              <button type="submit"  id="btupdateAluno">Atualizar</button> 
+            </form>
+      </div>
+   
+    </div>
+  </div>
+  </div> 
+  </div> 
+</div> 
+</div> 
+
+<div id="modalcadastrarestudante" class="modal">
+  <div class="modal__content">
+    <div class="modal__footer">
+      
+      <div class="login-page">
+      
+        <div class="form">
+      <a href="#alunos" class="modal__footer-btn-close"> Fechar </a>
+
+        <div class="login">
+        <div class="login-header">
+          <form onsubmit="return false;">
+            <label for="campocadastroNomeEstudante">Nome:</label>
+            <input type="text" class="formupdate" id="campocadastroNomeEstudante">
+
+            <label for="campocadastroEmailEstudante">Email:</label>
+            <input type="email" class="formupdate" id="campocadastroEmailEstudante">
+
+            <label for="campocadastroIdadeEstudante">Idade:</label>
+            <input type="number" class="formupdate"  id="campocadastroIdadeEstudante">
+
+            <label for="campocadastroTelefoneEstudante">Telefone:</label>
+            <input type="text" class="formupdate" id="campocadastroTelefoneEstudante">
+            
+            <label for="campocadastroDataEstudante">data:</label>
+            <input type="date" class="formupdate" id="campocadastroDataEstudante">
+            
+            <label for="campocadastroEscolaEstudante">escola:</label>
+            <input type="number"class="formupdate"  id="campocadastroEscolaEstudante">
+            
+            <label for="campocadastroIdentidadeEstudante">Identidade:</label>
+            <input type="text" class="formupdate" id="campocadastroIdentidadeEstudante">
+
+            <label for="campocadastroMatriculaEstudante">Matricula:</label>
+            <input type="text" class="formupdate" id="campocadastroMatriculaEstudante">
+
+            <label for="campocadastroSenhaEstudante">Senha:</label>
+            <input type="password" class="formupdate" id="campocadastroSenhaEstudante">
+
+            <button type="submit"  id="btcadastrarAluno">Cadastrar</button> 
+          </form>
+    </div>
+ 
+  </div>
+</div>
+</div> 
+</div> 
+</div> 
+</div> 
+
+
+<div id="modalcadastrarfunc" class="modal">
+  <div class="modal__content">
+    <div class="modal__footer">
+      
+      <div class="login-page">
+      
+        <div class="form">
+      <a href="#servidores" class="modal__footer-btn-close"> Fechar </a>
+
+      <div class="login">
+        <div class="login-header">
+          <form onsubmit="return false;">
+            <label for="campocadastroNomeFuncionario">Nome:</label>
+            <input type="text" class="formupdate" id="campocadastroNomeFuncionario" value="aaa1">
+
+            <label for="campocadastroEmailFuncionario">Email:</label>
+            <input type="email" class="formupdate" id="campocadastroEmailFuncionario" value="a1@gmail.com">
+
+            <label for="campocadastroIdadeFuncionario">Idade:</label>
+            <input type="number" class="formupdate"  id="campocadastroIdadeFuncionario" value="11">
+
+            <label for="campocadastroTelefoneFuncionario">Telefone:</label>
+            <input type="text" class="formupdate" id="campocadastroTelefoneFuncionario" value="13">
+            
+            <label for="campocadastroDataFuncionario">data:</label>
+            <input type="date" class="formupdate" id="campocadastroDataFuncionario" value="2022-11-11">
+            
+            <label for="campocadastroEscolaFuncionario">escola:</label>
+            <input type="number"class="formupdate"  id="campocadastroEscolaFuncionario" value="1">
+            
+            <label for="campocadastroIdentidadeFuncionario">Identidade:</label>
+            <input type="text" class="formupdate" id="campocadastroIdentidadeFuncionario" value="sim">
+
+            <label for="campocadastroSalarioFuncionario">Salario:</label>
+            <input type="text" class="formupdate" id="campocadastroSalarioFuncionario" value="11111">
+
+            <label for="campocadastroCargaHFuncionario">CargaH:</label>
+            <input type="text" class="formupdate" id="campocadastroCargaHFuncionario" value="44">
+
+            <label for="campocadastroCargoFuncionario">Cargo:</label>
+            <input type="text" class="formupdate" id="campocadastroCargoFuncionario" value="Sim">
+
+            <label for="campocadastroSenhaFuncionario">Senha: <b>OBS: se ele não for autenticado deixe em branco</b> </label>
+            <input type="password" class="formupdate" id="campocadastroSenhaFuncionario" value="senha" >
+
+            <button type="submit"  id="btcadastraFuncionario">Cadastrar</button> 
+          </form>
+    </div>
+ 
+  </div>
+</div>
+</div> 
+</div> 
+</div> 
+</div> 
+  </body>
+</html>

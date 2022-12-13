@@ -5,6 +5,7 @@ from rotas.cadastrar import *
 from rotas.deletar import *
 from rotas.atualizar import *
 from rotas.login import *
+from rotas.validar import *
 
 @app.route('/')
 def padrao():

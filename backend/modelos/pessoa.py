@@ -34,6 +34,6 @@ class Pessoa(db.Model):
             "telefone": self.telefone,
             "identidade": self.identidade,
             "cargo": self.cargo,
-            "data": f'{self.data.day}/{self.data.month}/{self.data.year}',
-            "escola": self.escola.escola
+            "data": str(f'{self.data.day}/{self.data.month}/{self.data.year}'),
+            "escola": self.escola.json()
         }
